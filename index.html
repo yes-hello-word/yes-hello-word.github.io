@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{/*去除内外边距*/
+				margin: 0px;
+				padding: 0px;
+			}
+			ul{/*去掉小圆点*/
+				list-style: none;
+			}
+			.list{
+				width: 1000px;
+				height: 500px;
+				border: 2px solid skyblue;/*阴影*/
+				margin: 200px auto 0;
+			}
+			.list li{
+				float: left;/*浮动*/
+				height: 500px;
+				color: red;
+				font-size: 30px;
+				box-shadow: 0 0 20px #999;/*盒子阴影*/
+			}
+			input[name="swich"]{
+				opacity: 0;/*我也不知道这是啥，好像是把那个选项的圆圈透明度变成0。反正是看不到了，但是它还是在这个页面上存在*/
+				width: 100px;
+				height: 500px;
+				transition: 0.4s;/*过渡时间*/
+				cursor: pointer;/*鼠标放上有小手的样式*/
+			}
+			input[name="swich"]:checked{/*点击转换*/
+				width: 700px;
+			}
+			.list li:nth-child(1),
+			.list li:nth-child(1) .bg{
+				background:url(img/QQ图片20210207143507.jpg) no-repeat center/cover;
+			}
+			.list li:nth-child(2),
+			.list li:nth-child(2) .bg{
+				background: url(img/QQ图片20210202154526.jpg) no-repeat center/cover;
+			}
+			.list li:nth-child(3),
+			.list li:nth-child(3) .bg{
+				background: url(img/QQ图片.png) no-repeat center/cover;
+			}
+			.list li:nth-child(4),
+			.list li:nth-child(4) .bg{
+				background: url(img/1ca720ab83b534c4c403cd0fdaa4c2d4.png) no-repeat center/cover;
+			}
+			.list li .bg{
+				/*1vw=1%的视口宽度
+				  vh同理
+				 */
+				opacity: 0;
+				z-index: -1;/*层级，就是王者那个*/
+				position: absolute;/*定位*/
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				filter: blur(5px);/*毛玻璃效果，模糊*/
+			}
+			input[name="swich"]:checked~ .bg{
+				opacity: 1;/*透明度变成1就显示了*/
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+			<li>
+				<input type="radio"name="swich"checked />
+				<div class="bg"></div>
+			</li>
+			<li>
+				<input type="radio"name="swich" />
+				<div class="bg"></div>
+			</li>
+			<li>
+				<input type="radio"name="swich" />
+				<div class="bg"></div>
+			</li>
+			<li>
+				<input type="radio"name="swich" />
+				<div class="bg"></div>
+			</li>
+		</ul>
+		
+	</body>
+</html>
